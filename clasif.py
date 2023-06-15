@@ -192,18 +192,3 @@ test_data = test_data.batch(32)
 model.fit(train_data, epochs=1, validation_data=test_data, callbacks=[tensorboard_callback])
 
 
-
-
-# Prepare the dataset for BERT
-train_data = train_data.shuffle(100).batch(32).repeat(2)
-test_data = test_data.batch(32)
-
-
-
-# Now you can train your model
-model.fit(train_data, epochs=1, validation_data=test_data, callbacks=[tensorboard_callback])
-
-#aqui se guarda el modelo "predictor"
-model.save_pretrained("predictor2")
-
-
